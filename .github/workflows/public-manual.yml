@@ -1,4 +1,4 @@
-name: Manual2
+name: PublicManual2
 
 on:
   workflow_dispatch:

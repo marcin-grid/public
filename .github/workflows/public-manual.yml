@@ -22,22 +22,22 @@ on:
           - no
 
 jobs:
-#   stg:
-#     name: Deploy to Staging
-#     runs-on: ubuntu-latest
-#     if: ${{ github.event.inputs.target == 'stg' || github.event.inputs.target == 'all' }}
-#     steps:
-#       - name: Checkout Code
-#         uses: actions/checkout@v3
+  stg:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.target == 'stg' || github.event.inputs.target == 'all' }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-#       - name: Deploy to Staging
-#         run: echo "Deploying to Staging..."
+      - name: Deploy to Staging
+        run: echo "Deploying to Staging..."
 
   prd:
     environment: manual
     name: Deploy to Production
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/test'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

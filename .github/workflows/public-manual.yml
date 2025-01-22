@@ -35,9 +35,10 @@ jobs:
 
   prd:
     environment: manual
+    needs: stg
     name: Deploy to Production
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/test'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3

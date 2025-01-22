@@ -34,10 +34,9 @@ jobs:
         run: echo "Deploying to Staging..."
 
   prd:
-    #environment: manual
+    environment: manual
     name: Deploy to Production
     runs-on: ubuntu-latest
-    needs: stg
     if: ${{ (github.event.inputs.target == 'prd' || github.event.inputs.target == 'all') && github.event.inputs.confirm == 'yes' }}
     steps:
       - name: Checkout Code

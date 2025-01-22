@@ -34,7 +34,7 @@ jobs:
         run: echo "Deploying to Staging..."
 
   prd:
-    environment: manual
+    #environment: manual
     name: Deploy to Production
     runs-on: ubuntu-latest
     needs: stg
